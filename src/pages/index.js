@@ -6,6 +6,9 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { initializeIcons, loadTheme } from '@fluentui/react'
 import theme from '../components/theme'
+import Header from '../components/Header'
+import Sidebar from '../components/Sidebar'
+import { NeutralColors } from '@fluentui/theme'
 
 initializeIcons()
 loadTheme(theme)
@@ -63,7 +66,20 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+const Index = () => {
+  return (
+    <div style={{ color: NeutralColors.gray10 }}>
+      <Header logo='XXX Digest' />
+      {/* <div className='w-full max-w-screen-xl mx-auto px-6'>
+        <div className='lg:flex -mx-6'>
+          <Sidebar />
+        </div>
+      </div> */}
+    </div>
+  )
+}
+
+export default Index
 
 export const pageQuery = graphql`
   query {
